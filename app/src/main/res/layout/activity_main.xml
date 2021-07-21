@@ -3,29 +3,112 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
     android:gravity="center_horizontal"
-    android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
-    <com.google.android.material.textview.MaterialTextView
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_top"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="match_parent"
+        android:minHeight="?android:attr/actionBarSize"
+        app:theme="@style/Widget.MaterialComponents.Toolbar" >
 
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masuk"
+            android:fontFamily="@font/airbnb"
+            android:layout_gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:id="@+id/toolbar_title" />
 
-    <com.google.android.material.textview.MaterialTextView
+        <ImageView
+            android:src="@drawable/ic_headset_mic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="end" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/googleButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:lineHeight="28dp"
-        android:textAlignment="center" />
+        app:icon="@drawable/ic_google_color"
+        app:iconTint="@null"
+        android:fontFamily="@font/airbnblight"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="Masuk dengan Google"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:cornerRadius="4dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/fbButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="@font/airbnblight"
+        app:iconTint="@null"
+        app:icon="@drawable/ic_facebook_color"
+        android:text="Masuk dengan Facebook"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:cornerRadius="4dp" />
+
+    <LinearLayout
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/gray_soft" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/airbnblight"
+            android:gravity="center"
+            android:text="Atau"
+            android:textSize="12sp" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@color/gray_soft" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,20 +117,11 @@
         android:layout_marginEnd="20dp"
         android:orientation="vertical">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:layout_marginBottom="12dp"
-            android:text="Username/Email"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:tooltipText="sss"
+            android:layout_marginBottom="12dp"
+            android:hint="Username or Email"
             app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -55,38 +129,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:hint="yourname@domain.com"
+                android:fontFamily="@font/airbnblight"
+                android:hint="Username or Email"
                 android:inputType="textEmailAddress"
                 android:padding="12dp"
-                android:textColor="@color/white" />
+                android:textSize="12sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:text="Password"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Password"
             app:hintEnabled="false"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/white">
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputPassword"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/transparent"
-                android:hint="password anda"
+                android:fontFamily="@font/airbnblight"
+                android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="12dp"
-                android:textColor="@color/white" />
+                android:textSize="12sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,10 +162,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:layout_marginTop="20dp"
-            android:text="Lupa password?"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:visibility="invisible" />
+            android:fontFamily="@font/airbnb"
+            android:text="Lupa password"
+            android:textColor="@color/green"
+            android:textSize="14sp" />
 
     </LinearLayout>
 
@@ -113,13 +180,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            android:enabled="false"
+            android:fontFamily="@font/airbnb"
             android:paddingTop="13dp"
             android:paddingBottom="13dp"
-            android:text="Masuk"
+            android:text="Login"
             android:textAllCaps="false"
-            android:textColor="@color/black"
-            app:cornerRadius="10dp" />
+            android:textStyle="bold"
+            app:cornerRadius="4dp" />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -130,52 +197,18 @@
     </FrameLayout>
 
     <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="12dp"
-        android:text="atau" />
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/googleLoginButton"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:paddingTop="13dp"
-            android:paddingBottom="13dp"
-            android:text="Masuk dengan google"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            app:cornerRadius="10dp"
-            app:iconTint="@null"
-            app:strokeColor="@color/white" />
-
-        <ProgressBar
-            android:id="@+id/progressBar2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
-
-    </FrameLayout>
+        android:fontFamily="@font/airbnb"
+        android:text="Belum punya akun ? Daftar Sekarang"
+        android:textSize="12sp" />
 
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/registerButton"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="24dp"
-        android:textAllCaps="false" />
 
 </LinearLayout>

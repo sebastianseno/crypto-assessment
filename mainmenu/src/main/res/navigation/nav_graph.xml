@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.crypto.mainmenu.FirstFragment"
+        android:name="com.crypto.mainmenu.WatchListFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/fragment_watch_list">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"

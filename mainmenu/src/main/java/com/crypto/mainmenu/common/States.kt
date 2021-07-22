@@ -2,6 +2,7 @@ package com.crypto.mainmenu.common
 
 sealed class UiState {
     object Loading : UiState()
+    object Refreshing : UiState()
     object Success : UiState()
     class Error(val message: String) : UiState()
 }

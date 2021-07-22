@@ -20,11 +20,12 @@ class WatchListViewModel @Inject constructor(
 
     val state  = MutableLiveData<UiState>()
 
-    fun refreshTotalTopTier(limit: Int, tsym: String) {
+    fun refreshTotalTopTier(isRefreshing:Boolean,page: Int, limit: Int, tsym: String) {
         viewModelScope.launch {
-            state.postValue(UiState.Loading)
+            if (isRefreshing) state.postValue(UiState.Refreshing) else
+                state.postValue(UiState.Loading)
             runCatching {
-                service.getTotalTopTier(limit, tsym)
+                service.getTotalTopTier(page, limit, tsym)
             }.onSuccess {
                 cryptoData.value = it.data
                 state.postValue(UiState.Success)

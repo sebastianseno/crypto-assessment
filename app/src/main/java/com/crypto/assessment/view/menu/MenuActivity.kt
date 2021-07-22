@@ -1,14 +1,17 @@
-package com.crypto.mainmenu
+package com.crypto.assessment.view.menu
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
+import com.crypto.mainmenu.R
 import com.crypto.mainmenu.databinding.ActivityMenuBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MenuActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -24,6 +27,8 @@ class MenuActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_content_menu)
         appBarConfiguration = AppBarConfiguration(navController.graph)
+        binding.bottomNav.setupWithNavController(navController)
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         navController.addOnDestinationChangedListener { _, destination, _ ->
             supportActionBar?.setIcon(R.drawable.logo_stockbit)

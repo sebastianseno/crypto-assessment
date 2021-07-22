@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    tools:context=".view.login.LoginActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_top"

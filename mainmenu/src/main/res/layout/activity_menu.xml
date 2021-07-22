@@ -7,11 +7,14 @@
     android:orientation="vertical"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
-    tools:context=".MenuActivity">
+    tools:context="com.crypto.assessment.view.menu.MenuActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingBottom="4dp"
+        app:elevation="0dp"
         android:theme="@style/Theme.MyApplication.AppBarOverlay">
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"

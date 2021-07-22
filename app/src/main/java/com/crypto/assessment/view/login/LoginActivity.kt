@@ -1,12 +1,14 @@
-package com.crypto.assessment
+package com.crypto.assessment.view.login
 
 import android.content.Intent
 import android.os.Bundle
 import android.text.Html
 import androidx.appcompat.app.AppCompatActivity
 import com.crypto.assessment.databinding.ActivityMainBinding
-import com.crypto.mainmenu.MenuActivity
+import com.crypto.assessment.view.menu.MenuActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

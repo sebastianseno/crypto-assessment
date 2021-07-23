@@ -5,19 +5,15 @@
         android:icon="@drawable/ic_star"
         android:title="Watchlist" />
     <item
-        android:id="@+id/SecondFragment"
         android:icon="@drawable/ic_stream"
         android:title="Stream" />
     <item
-        android:id="@+id/transactionFragment"
         android:icon="@drawable/ic_search"
         android:title="Search" />
     <item
-        android:id="@+id/profileFragment"
         android:icon="@drawable/ic_chat"
         android:title="Chat" />
     <item
-        android:id="@+id/portfolio"
         android:icon="@drawable/ic_pie"
         android:title="Portfolio" />
 </menu>

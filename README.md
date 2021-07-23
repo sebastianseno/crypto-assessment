@@ -1,7 +1,7 @@
 # Crypto currency mini apps modularization
 
 In this mini app I also adding login validation to prevent user input incorrect email format and incorrect password and also that case I used for unit testing scenario.
-
+To login in this app please fill with valid email format (eg: email@bibi.com) and fill password with 4 or more characters digit.
 ### In this application I use these libraries :
 
 #### Dependency Injection

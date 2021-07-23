@@ -12,6 +12,7 @@ import com.crypto.mainmenu.base.BaseFragment
 import com.crypto.mainmenu.common.UiState
 import com.crypto.mainmenu.databinding.FragmentWatchListBinding
 import com.crypto.mainmenu.network.entity.Data
+import com.crypto.mainmenu.viewModel.WatchListViewModel
 
 class WatchListFragment : BaseFragment() {
 
@@ -47,8 +48,10 @@ class WatchListFragment : BaseFragment() {
             arrayData.clear()
             viewModel.refreshTotalTopTier(true, 1, 10, "USD")
         }
+
         val scrollListener = object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+
                 if (dy > 0) { //check for scroll down
                     val layoutManager = recyclerView.layoutManager as LinearLayoutManager
                     val visibleItemCount = layoutManager.childCount

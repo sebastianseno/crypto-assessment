@@ -1,6 +1,5 @@
-package com.crypto.mainmenu.view
+package com.crypto.mainmenu.viewModel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

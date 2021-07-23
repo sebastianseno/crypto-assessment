@@ -2,7 +2,7 @@
 
 In this mini app I also adding login validation to prevent user input incorrect email format and incorrect password and also that case I used for unit testing scenario.
 
-### In this application I these libraries :
+### In this application I use these libraries :
 
 #### Dependency Injection
 Hilt as dependency Injection
